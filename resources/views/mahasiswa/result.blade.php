@@ -77,7 +77,7 @@
 
                 <tr>
                     <td class="title">Alamat Email<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['email'])}}</span></td>
+                    <td><span>{{$data['email']}}</span></td>
                 </tr>
 
                 <tr>
@@ -95,6 +95,9 @@
                         @foreach ($data['sumber_informasi'] as $item)
                             <ul>
                                 <li>{{$item}}</li>
+                                @if ($item == 'Teman')
+                                    {{"Nama Pemberi Referensi: " . $data['nama_pemberi_referensi']}}
+                                @endif
                             </ul>
                         @endforeach
                     <td>
