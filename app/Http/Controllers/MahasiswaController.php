@@ -37,19 +37,19 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'nama_calon_mahasiswa' => 'required|alpha',
+            'nama_calon_mahasiswa' => 'required|regex:/^[\pL\s\-]+$/u',
             'nisn' => 'required|numeric',
             'jenis_kartu_identitas' => 'required',
             'no_kartu_identitas' => 'required|numeric',
             'jenis_kelamin' => 'required',
             'agama' => 'required',
-            'tempat_lahir' => 'required|alpha',
+            'tempat_lahir' => 'required|regex:/^[\pL\s\-]+$/u',
             'tanggal_lahir' => 'required|date',
             'alamat_lengkap' => 'required',
             'no_wa' => 'required|numeric',
             'email' => 'required|email',
             'no_telepon_wali' => 'required|numeric',
-            'nama_pemberi_referensi' => 'required|alpha',
+            'nama_pemberi_referensi' => 'required|regex:/^[\pL\s\-]+$/u',
             'sumber_informasi' => 'required',
         ];
 
@@ -73,9 +73,9 @@ class MahasiswaController extends Controller
             "sumber_informasi.required" => "Sumber Informasi harus dipilih minimal 1",
             "no_wa.required" => "No WA harus diisi",
             "no_wa.numeric" => "No WA harus berupa angka",
-            'nama_calon_mahasiswa.alpha' => 'Nama Calon Mahasiswa harus berupa huruf',
-            'tempat_lahir.alpha' => 'Tempat Lahir harus berupa huruf',
-            'nama_pemberi_informasi.alpha' => 'Nama Pemberi Informasi harus berupa huruf',
+            'nama_calon_mahasiswa.regex' => 'Nama Calon Mahasiswa harus berupa huruf',
+            'tempat_lahir.regex' => 'Tempat Lahir harus berupa huruf',
+            'nama_pemberi_informasi.regex' => 'Nama Pemberi Informasi harus berupa huruf',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
