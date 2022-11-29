@@ -74,7 +74,7 @@
                 <tr>
                     <td class="title">Nama Calon Mahasiswa<span class="text-danger">*</span></td>
                     <td>
-                        <input type="text" required value="{{old('nama_calon_mahasiswa')}}" class="form-control" placeholder="Nama ..." name="nama_calon_mahasiswa">
+                        <input type="text" value="{{old('nama_calon_mahasiswa')}}" class="form-control" placeholder="Nama ..." name="nama_calon_mahasiswa">
                         @error('nama_calon_mahasiswa') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -82,7 +82,7 @@
                 <tr>
                     <td class="title">No. Induk Siswa Nasional Ijazah</td>
                     <td>
-                        <input type="text" required value="{{old('nisn')}}" class="form-control" placeholder="NISN" name="nisn">
+                        <input type="text" value="{{old('nisn')}}" class="form-control" placeholder="NISN" name="nisn">
                         @error('nisn') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -90,7 +90,7 @@
                 <tr>
                     <td class="title">Jenis Kartu Identitas<span class="text-danger">*</span></td>
                     <td>
-                        <select class="form-select" required name="jenis_kartu_identitas">
+                        <select class="form-select" name="jenis_kartu_identitas">
                             <option value="">- Klik Disini Pilih -</option>
                             <option value="KTP" {{old('jenis_kartu_identitas') == 'KTP' ? 'selected' : ''}}>KTP</option>
                             <option value="PASSPORT" {{old('jenis_kartu_identitas') == 'PASSPORT' ? 'selected' : ''}}>PASSPORT</option>
@@ -103,7 +103,7 @@
                 <tr>
                     <td class="title">Isi No. Kartu Identitas<span class="text-danger">*</span></td>
                     <td>
-                        <input type="text" required value="{{old('no_kartu_identitas')}}" class="form-control" placeholder="No Identitas ..." name="no_kartu_identitas">
+                        <input type="text" value="{{old('no_kartu_identitas')}}" class="form-control" placeholder="No Identitas ..." name="no_kartu_identitas">
                         @error('no_kartu_identitas') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -111,7 +111,7 @@
                 <tr>
                     <td class="title">Jenis Kelamin<span class="text-danger">*</span></td>
                     <td>
-                        <select class="form-select" required name="jenis_kelamin">
+                        <select class="form-select" name="jenis_kelamin">
                             <option value="">- Klik Disini Pilih -</option>
                             <option value="Laki-Laki" {{old('jenis_kelamin') == 'Laki-Laki' ? 'selected' : ''}}>Laki-Laki</option>
                             <option value="Perempuan" {{old('jenis_kelamin') == 'Perempuan' ? 'selected' : ''}}>Perempuan</option>
@@ -123,7 +123,7 @@
                 <tr>
                     <td class="title">Agama<span class="text-danger">*</span></td>
                     <td>
-                        <select class="form-select" required name="agama">
+                        <select class="form-select" name="agama">
                             <option value="">- Klik Disini Pilih -</option>
                             <option value="ISLAM" {{old('agama') == 'ISLAM' ? 'selected' : ''}}>ISLAM</option>
                             <option value="KRISTEN" {{old('agama') == 'KRISTEN' ? 'selected' : ''}}>KRISTEN</option>
@@ -138,7 +138,7 @@
                 <tr>
                     <td class="title">Tempat Lahir<span class="text-danger">*</span></td>
                     <td>
-                        <input type="text" required value="{{old('tempat_lahir')}}" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir">
+                        <input type="text" value="{{old('tempat_lahir')}}" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir">
                         @error('tempat_lahir') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -146,7 +146,7 @@
                 <tr>
                     <td class="title">Tanggal Lahir<span class="text-danger">*</span></td>
                     <td>
-                        <input type="date" required class="form-control" value="{{old('tanggal_lahir')}}" placeholder="No Identitas ..." name="tanggal_lahir">
+                        <input type="date" class="form-control" value="{{old('tanggal_lahir')}}" placeholder="No Identitas ..." name="tanggal_lahir">
                         @error('tanggal_lahir') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -161,7 +161,7 @@
                 <tr>
                     <td class="title">No. WA<span class="text-danger">*</span></td>
                     <td>
-                        <input type="text" required value="{{old('no_wa')}}" class="form-control" placeholder="No.WA ..." name="no_wa">
+                        <input type="text" value="{{old('no_wa')}}" class="form-control" placeholder="No.WA ..." name="no_wa">
                         @error('no_wa') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -169,7 +169,7 @@
                 <tr>
                     <td class="title">Alamat Email<span class="text-danger">*</span></td>
                     <td>
-                        <input type="text" required value="{{old('email')}}" class="form-control" placeholder="E-mail" name="email">
+                        <input type="text" value="{{old('email')}}" class="form-control" placeholder="E-mail" name="email">
                         @error('email') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -177,7 +177,7 @@
                 <tr>
                     <td class="title">No. Telepon Wali<span class="text-danger">*</span></td>
                     <td>
-                        <input type="text" required value="{{old('no_telepon_wali')}}" class="form-control" placeholder="No Telepon Wali ..." name="no_telepon_wali">
+                        <input type="text" value="{{old('no_telepon_wali')}}" class="form-control" placeholder="No Telepon Wali ..." name="no_telepon_wali">
                         @error('no_telepon_wali') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
@@ -190,12 +190,12 @@
                     <td class="title">Sumber Informasi<span class="text-danger">*</span></td>
                     <td>
                         <ul>
-                            <li><input type="checkbox" required name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Website', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Website"> Website </li>
-                            <li><input type="checkbox" required name="sumber_informasi[]" class="form-check-input checkboxTeman" {{old('sumber_informasi') ? in_array('Teman', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Teman"> Teman </li>
-                            <li><input type="checkbox" required name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Brosur', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Brosur"> Brosur </li>
-                            <li><input type="checkbox" required name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Spanduk', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Spanduk"> Spanduk </li>
-                            <li><input type="checkbox" required name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Sosialisasi', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Sosialisasi"> Sosialisasi </li>
-                            <li><input type="checkbox" required name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('WA', old("sumber_informasi")) ? 'checked' : '' : ''}} value="WA"> WA </li>
+                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Website', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Website"> Website </li>
+                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input checkboxTeman" {{old('sumber_informasi') ? in_array('Teman', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Teman"> Teman </li>
+                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Brosur', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Brosur"> Brosur </li>
+                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Spanduk', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Spanduk"> Spanduk </li>
+                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Sosialisasi', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Sosialisasi"> Sosialisasi </li>
+                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('WA', old("sumber_informasi")) ? 'checked' : '' : ''}} value="WA"> WA </li>
                         </ul>
                         @error('sumber_informasi') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     <td>
@@ -204,19 +204,19 @@
                 <tr id="refFriend">
                     <td class="title">Jika Referensi Dari Teman</td>
                     <td>
-                        <input type="text" required value="{{old('nama_pemberi_referensi')}}" id="inputRef" class="form-control" placeholder="Nama Pemberi Referensi ..." name="nama_pemberi_referensi">
+                        <input type="text" value="{{old('nama_pemberi_referensi')}}" id="inputRef" class="form-control" placeholder="Nama Pemberi Referensi ..." name="nama_pemberi_referensi">
                         @error('nama_pemberi_referensi') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     </td>
                 </tr>
 
                 <tr>
                     <td class="title">Pernyataan<span class="text-danger">*</span></td>
-                    <td><input type="checkbox" required id="syaratDanKetentuan" class="form-check-input" value="WA"> Dengan ini saya menyatakan bahwa data yang saya masukkan benar adanya, dan jika ternyata dikemudian hari ditemukan kesalahan pada data ini baik yang disengaja ataupun tidak disengaja, maka menjadi tanggung jawab saya pribadi.  </td>
+                    <td><input type="checkbox" id="syaratDanKetentuan" class="form-check-input" value="WA"> Dengan ini saya menyatakan bahwa data yang saya masukkan benar adanya, dan jika ternyata dikemudian hari ditemukan kesalahan pada data ini baik yang disengaja ataupun tidak disengaja, maka menjadi tanggung jawab saya pribadi.  </td>
                 </tr>
 
                 <tr>
                     <td>Apakah data sudah benar?</td>
-                    <td><input type="submit" required id="buttonSubmit" class="btn btn-success" value="Submit"></td>
+                    <td><input type="submit" id="buttonSubmit" class="btn btn-success" value="Submit"></td>
                 </tr>
 
             </table>
