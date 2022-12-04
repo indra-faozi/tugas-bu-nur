@@ -190,12 +190,22 @@
                     <td class="title">Sumber Informasi<span class="text-danger">*</span></td>
                     <td>
                         <ul>
-                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Website', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Website"> Website </li>
+
+                            @foreach ($sumber_informasi as $item)
+                            
+                            @if ($item['sumber_informasi'] == 'Teman')
+                                <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input checkboxTeman" {{old('sumber_informasi') ? in_array($item['sumber_informasi'], old("sumber_informasi")) ? 'checked' : '' : ''}} value={{$item['id']}}> {{$item['sumber_informasi']}} </li>
+                            @else
+                                <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array($item['sumber_informasi'], old("sumber_informasi")) ? 'checked' : '' : ''}} value={{$item['id']}}> {{$item['sumber_informasi']}} </li>
+                            @endif
+                            @endforeach
+
+                            {{-- <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Website', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Website"> Website </li>
                             <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input checkboxTeman" {{old('sumber_informasi') ? in_array('Teman', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Teman"> Teman </li>
                             <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Brosur', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Brosur"> Brosur </li>
                             <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Spanduk', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Spanduk"> Spanduk </li>
                             <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('Sosialisasi', old("sumber_informasi")) ? 'checked' : '' : ''}} value="Sosialisasi"> Sosialisasi </li>
-                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('WA', old("sumber_informasi")) ? 'checked' : '' : ''}} value="WA"> WA </li>
+                            <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array('WA', old("sumber_informasi")) ? 'checked' : '' : ''}} value="WA"> WA </li> --}}
                         </ul>
                         @error('sumber_informasi') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
                     <td>

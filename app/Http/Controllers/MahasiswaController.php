@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
+use App\Models\SumberInformasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,7 +16,12 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        return view('mahasiswa.index');
+        $sumber_informasi = SumberInformasi::all();
+        
+        $data = [
+            'sumber_informasi' => $sumber_informasi,
+        ];
+        return view('mahasiswa.index', $data);
     }
 
     /**
@@ -82,11 +88,17 @@ class MahasiswaController extends Controller
         if ($validator->fails()) {
             return redirect()->route('mahasiswas.index')->withErrors($validator)->withInput();
         }
+
+        $str_sumber_informasi = implode(',', $request->sumber_informasi);
+        $request->merge(['sumber_informasi' => $str_sumber_informasi]);
+
+        Mahasiswa::create($request->all());
+
         $data = [
             'data' => $request->all()
         ];
 
-        return view('mahasiswa.result', $data);
+        // return view('mahasiswa.result', $data);
     }
 
     /**
