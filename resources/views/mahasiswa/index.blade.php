@@ -93,7 +93,7 @@
                         <select class="form-select" name="jenis_kartu_identitas">
                             <option value="">- Klik Disini Pilih -</option>
                             <option value="KTP" {{old('jenis_kartu_identitas') == 'KTP' ? 'selected' : ''}}>KTP</option>
-                            <option value="PASSPORT" {{old('jenis_kartu_identitas') == 'PASSPORT' ? 'selected' : ''}}>PASSPORT</option>
+                            {{-- <option value="PASSPORT" {{old('jenis_kartu_identitas') == 'PASSPORT' ? 'selected' : ''}}>PASSPORT</option> --}}
                             <option value="SIM" {{old('jenis_kartu_identitas') == 'SIM' ? 'selected' : ''}}>SIM</option>
                         </select>
                         @error('jenis_kartu_identitas') <div id="emailHelp" class="form-text text-danger">{{$message}}</div> @enderror
