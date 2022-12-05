@@ -135,8 +135,20 @@ class MahasiswaController extends Controller
      */
     public function show($email)
     {
-        dump($email);
-        exit;
+        $mahasiswa = Mahasiswa::where('email', $email)->first();
+        if(!$mahasiswa) return redirect()->route('mahasiswas.index');
+
+        $id_sumber_informasi_arr = explode(',', $mahasiswa->sumber_informasi);
+        
+        
+        $sumber_informasi = SumberInformasi::all()->whereIn('id', $id_sumber_informasi_arr);
+
+        $data = [
+            'data' => $mahasiswa,
+            'sumber_informasi' => $sumber_informasi
+        ];
+
+        return view('mahasiswa.result', $data);
     }
 
     /**

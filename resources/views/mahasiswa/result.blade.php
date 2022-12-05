@@ -28,61 +28,61 @@
 
                 <tr>
                     <td class="title">Nama Calon Mahasiswa<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['nama_calon_mahasiswa'])}}</span></td>
+                    <td><span>{{$data->nama_calon_mahasiswa}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">No. Induk Siswa Nasional Ijazah</td>
-                    <td><span>{{strtoupper($data['nisn'])}}</span></td>
+                    <td><span>{{$data->nisn}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">Jenis Kartu Identitas<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['jenis_kartu_identitas'])}}</span></td>
+                    <td><span>{{$data->jenis_kartu_identitas}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">Isi No. Kartu Identitas<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['no_kartu_identitas'])}}</span></td>
+                    <td><span>{{$data->no_kartu_identitas}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">Jenis Kelamin<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['jenis_kelamin'])}}</span></td>
+                    <td><span>{{$data->jenis_kelamin}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">Agama<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['agama'])}}</span></td>
+                    <td><span>{{$data->agama}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">Tempat Lahir<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['tempat_lahir'])}}</span></td>
+                    <td><span>{{$data->tempat_lahir}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">Tanggal Lahir<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['tanggal_lahir'])}}</span></td>
+                    <td><span>{{$data->tanggal_lahir}}</span></td>
                 </tr>
                 <tr>
                     <td class="title">Alamat Lengkap<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['alamat_lengkap'])}}</span></td>
+                    <td><span>{{$data->alamat_lengkap}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">No. WA<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['no_wa'])}}</span></td>
+                    <td><span>{{$data->no_wa}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">Alamat Email<span class="text-danger">*</span></td>
-                    <td><span>{{$data['email']}}</span></td>
+                    <td><span>{{$data->email}}</span></td>
                 </tr>
 
                 <tr>
                     <td class="title">No. Telepon Wali<span class="text-danger">*</span></td>
-                    <td><span>{{strtoupper($data['no_telepon_wali'])}}</span></td>
+                    <td><span>{{$data->no_telepon_wali}}</span></td>
                 </tr>
 
                 <tr>
@@ -92,18 +92,18 @@
                 <tr>
                     <td class="title">Sumber Informasi<span class="text-danger">*</span></td>
                     <td>
-                        @foreach ($data['sumber_informasi'] as $item)
+                        @foreach ($sumber_informasi as $item)
                             <ul>
-                                <li>{{$item}}</li>
-                                @if ($item == 'Teman')
-                                    {{"Nama Pemberi Referensi: " . $data['nama_pemberi_referensi']}}
+                                <li>{{$item['sumber_informasi']}}</li>
+                                @if ($item['sumber_informasi'] == 'Teman')
+                                    {{"Nama Pemberi Referensi: " . $data->nama_pemberi_referensi}}
                                 @endif
                             </ul>
                         @endforeach
                     <td>
                 </tr>
 
-                {{-- {{var_dump($data['sumber_informasi'])}} --}}
+                {{-- {{var_dump($data->sumber_informasi)}} --}}
 
             </table>
         </form>
