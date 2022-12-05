@@ -194,9 +194,9 @@
                             @foreach ($sumber_informasi as $item)
                             
                             @if ($item['sumber_informasi'] == 'Teman')
-                                <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input checkboxTeman" {{old('sumber_informasi') ? in_array($item['sumber_informasi'], old("sumber_informasi")) ? 'checked' : '' : ''}} value={{$item['id']}}> {{$item['sumber_informasi']}} </li>
+                                <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input checkboxTeman" {{old('sumber_informasi') ? in_array($item['id'], old("sumber_informasi")) ? 'checked' : '' : ''}} value={{$item['id']}}> {{$item['sumber_informasi']}} </li>
                             @else
-                                <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array($item['sumber_informasi'], old("sumber_informasi")) ? 'checked' : '' : ''}} value={{$item['id']}}> {{$item['sumber_informasi']}} </li>
+                                <li><input type="checkbox" name="sumber_informasi[]" class="form-check-input" {{old('sumber_informasi') ? in_array($item['id'], old("sumber_informasi")) ? 'checked' : '' : ''}} value={{$item['id']}}> {{$item['sumber_informasi']}} </li>
                             @endif
                             @endforeach
 
