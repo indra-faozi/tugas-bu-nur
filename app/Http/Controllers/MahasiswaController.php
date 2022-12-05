@@ -57,13 +57,13 @@ class MahasiswaController extends Controller
         $str_no_telepon = implode(',', $no_telpon);
         
         $rules = [
-            'nama_calon_mahasiswa' => 'required|regex:/^[\pL\s\-]+$/u|digits_between:2,20',
+            'nama_calon_mahasiswa' => 'required|regex:/^[\pL\s\-]+$/u|min:2|max:30',
             'nisn' => 'required|numeric|digits:10',
             'jenis_kartu_identitas' => 'required',
             'no_kartu_identitas' => 'required|numeric|digits_between:12,16',
             'jenis_kelamin' => 'required',
             'agama' => 'required',
-            'tempat_lahir' => 'required|regex:/^[\pL\s\-]+$/u|digits_between:2,50',
+            'tempat_lahir' => 'required|regex:/^[\pL\s\-]+$/u|min:3|max:40',
             'tanggal_lahir' => 'required|date|before_or_equal:' . Carbon::now()->subYears(18)->format('Y-m-d'),
             'alamat_lengkap' => 'required',
             'no_wa' => 'required|numeric|starts_with:'.$str_no_telepon,
@@ -74,7 +74,8 @@ class MahasiswaController extends Controller
         ];
 
         $messages = [
-            "nama_calon_mahasiswa.digits_between" => "Minimal huruf :min dan maksimal huruf :max",
+            "nama_calon_mahasiswa.min" => "Nama Calon Mahasiswa minimal :min",
+            "nama_calon_mahasiswa.max" => "Nama Calon Mahasiswa maksimal :max",
             "nama_calon_mahasiswa.required" => "Nama Calon Mahasiswa harus diisi",
             "nisn.required" => "NISN harus diisi",
             "nisn.digits" => "NISN harus berisi :digits digit",
