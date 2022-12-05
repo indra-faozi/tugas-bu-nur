@@ -63,7 +63,7 @@ class MahasiswaController extends Controller
             'no_kartu_identitas' => 'required|numeric|digits_between:12,16',
             'jenis_kelamin' => 'required',
             'agama' => 'required',
-            'tempat_lahir' => 'required|regex:/^[\pL\s\-]+$/u|digits_between:2,20',
+            'tempat_lahir' => 'required|regex:/^[\pL\s\-]+$/u|digits_between:2,50',
             'tanggal_lahir' => 'required|date|before_or_equal:' . Carbon::now()->subYears(18)->format('Y-m-d'),
             'alamat_lengkap' => 'required',
             'no_wa' => 'required|numeric|starts_with:'.$str_no_telepon,
@@ -126,9 +126,10 @@ class MahasiswaController extends Controller
      * @param  \App\Models\Mahasiswa  $mahasiswa
      * @return \Illuminate\Http\Response
      */
-    public function show(Mahasiswa $mahasiswa)
+    public function show($email)
     {
-        //
+        dump($email);
+        exit;
     }
 
     /**
